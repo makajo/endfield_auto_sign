@@ -5,7 +5,7 @@ File: auto_sign.py
 Author: sjtt2
 cron: 0 30 8 * * *
 new Env('终末地签到');
-Update: 2026/2/20
+Update: 2026/4/20
 """
 import hashlib
 import hmac
@@ -175,7 +175,6 @@ def get_endfield_roles(cred,cfg):
         'platform': PLATFORM,
         'vName': VNAME,
         'timestamp': sign_header['timestamp'],
-        'sk-language': 'en',
         'sign': sign,
         'Content-Type': 'application/json'
     }
@@ -209,7 +208,6 @@ def do_daily_sign(cred,cfg):
             'platform': PLATFORM,
             'vName': VNAME,
             'timestamp': sign_header['timestamp'],
-            'sk-language': 'en',
             'sign': sign,
             'sk-game-role': role_str,
             'Content-Type': 'application/json'
