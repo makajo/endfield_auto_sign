@@ -15,7 +15,14 @@ import random
 import time
 from urllib import parse
 import requests
-import notify
+
+
+# 替换 notify.send（青龙面板推送模块），这里只用 print
+def send_notify(title, content):
+    """消息推送占位"""
+    print(f"\n===== {title} =====")
+    print(content)
+    print("=" * 40)
 
 
 # ========== 防封号配置 ==========
