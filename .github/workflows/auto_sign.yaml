@@ -1,0 +1,18 @@
+name: Endfield Auto Sign
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Run endfield sign
+        env:
+          SKYLAND_TOKEN: uIsFbh7mq/9r7ArLgi6tcJgM
+        run: |
+          pip install requests -q
+          python auto_sign.py
