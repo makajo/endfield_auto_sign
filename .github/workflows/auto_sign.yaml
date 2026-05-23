@@ -12,7 +12,7 @@ jobs:
           persist-credentials: false
       - name: Run endfield sign
         env:
-          SKYLAND_TOKEN: uIsFbh7mq/9r7ArLgi6tcJgM
+          SKYLAND_TOKEN: ${{ secrets.SKYLAND_TOKEN }}
         run: |
           pip install requests -q
           python auto_sign.py
